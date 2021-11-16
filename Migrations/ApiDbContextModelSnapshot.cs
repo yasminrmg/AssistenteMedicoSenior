@@ -378,7 +378,6 @@ namespace AssistenteMedicoSenior.Migrations
                         .HasColumnType("varchar(12)");
 
                     b.Property<string>("Senha")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Sexo")
@@ -390,11 +389,6 @@ namespace AssistenteMedicoSenior.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20)");
-
-                    b.Property<string>("Usuario")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("varchar(40)");
 
                     b.HasKey("Cod_Pessoa");
 
@@ -464,8 +458,9 @@ namespace AssistenteMedicoSenior.Migrations
 
             modelBuilder.Entity("AssistenteMedicoSenior.Models.Questionario_Resposta", b =>
                 {
-                    b.Property<string>("Cod_Resposta")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("Cod_Resposta")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
                     b.Property<int>("Cod_Diario")
                         .HasColumnType("int");

@@ -102,9 +102,7 @@ namespace AssistenteMedicoSenior.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Uf = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Usuario = table.Column<string>(type: "varchar(40)", maxLength: 40, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Senha = table.Column<string>(type: "longtext", nullable: false)
+                    Senha = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Cod_Pessoa_Tipo = table.Column<int>(type: "int", nullable: false),
                     Pessoa_TipoCod_Pessoa_Tipo = table.Column<int>(type: "int", nullable: true)
@@ -482,8 +480,8 @@ namespace AssistenteMedicoSenior.Migrations
                 name: "Questionarios_Respostas",
                 columns: table => new
                 {
-                    Cod_Resposta = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Cod_Resposta = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Resposta = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Cod_Pessoa_Paciente = table.Column<int>(type: "int", nullable: false),

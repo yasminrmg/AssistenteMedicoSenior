@@ -61,9 +61,10 @@ namespace AssistenteMedicoSenior.Models
         /*[Required]
         [MaxLength(40)]
         public string Usuario { get; set; }*
-        [Required]*/
+        */
         [NotMapped]
         public string token { get; set; }
+        [Required]
         public string Senha { get; set; }
 
         [Required]
